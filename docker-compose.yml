@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: igaming-postgres
+    environment:
+      POSTGRES_USER: igaming
+      POSTGRES_PASSWORD: igaming
+      POSTGRES_DB: igaming
+    ports:
+      - '5440:5432'
+    volumes:
+      - igaming-pg:/var/lib/postgresql/data
+      - ./infrastructure/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U igaming -d igaming']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    container_name: igaming-redis
+    command: ['redis-server', '--appendonly', 'no', '--save', '']
+    ports:
+      - '6380:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  igaming-pg:
