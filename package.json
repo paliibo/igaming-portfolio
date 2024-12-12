@@ -1,0 +1,33 @@
+{
+  "name": "igaming-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @igaming/database generate && pnpm --filter @igaming/database build",
+    "db:migrate": "pnpm --filter @igaming/database migrate:deploy",
+    "db:migrate:dev": "pnpm --filter @igaming/database migrate:dev",
+    "db:seed": "pnpm --filter @igaming/api seed",
+    "db:reset": "pnpm --filter @igaming/database migrate:reset && pnpm db:seed",
+    "verify": "pnpm typecheck && pnpm lint && pnpm build && pnpm test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.13.3",
+    "dotenv": "^18.0.9",
+    "prettier": "^3.9.10",
+    "turbo": "^2.11.10",
+    "typescript": "^6.0.3"
+  }
+}

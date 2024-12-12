@@ -1,0 +1,15 @@
+node_modules
+dist
+.next
+.turbo
+coverage
+*.tsbuildinfo
+.env
+.env.*.local
+packages/database/src/generated
+e2e/test-results
+e2e/playwright-report
+playwright-report
+test-results
+.DS_Store
+AGENTS.md
