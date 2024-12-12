@@ -1,0 +1,33 @@
+export const queryKeys = {
+  me: ['auth', 'me'] as const,
+  wallet: ['wallet'] as const,
+  walletTransactions: (filters: Record<string, unknown> = {}) =>
+    ['wallet', 'transactions', filters] as const,
+  sports: ['sportsbook', 'sports'] as const,
+  events: (filters: Record<string, unknown> = {}) => ['sportsbook', 'events', filters] as const,
+  event: (id: string) => ['sportsbook', 'event', id] as const,
+  bets: (filters: Record<string, unknown> = {}) => ['sportsbook', 'bets', filters] as const,
+  bet: (id: string) => ['sportsbook', 'bet', id] as const,
+  games: (filters: Record<string, unknown> = {}) => ['casino', 'games', filters] as const,
+  game: (slug: string) => ['casino', 'game', slug] as const,
+  favorites: ['casino', 'favorites'] as const,
+  rounds: (filters: Record<string, unknown> = {}) => ['casino', 'rounds', filters] as const,
+  admin: {
+    dashboard: ['admin', 'dashboard'] as const,
+    reports: (days: number) => ['admin', 'reports', days] as const,
+    players: (filters: Record<string, unknown> = {}) => ['admin', 'players', filters] as const,
+    player: (id: string) => ['admin', 'player', id] as const,
+    transactions: (filters: Record<string, unknown> = {}) =>
+      ['admin', 'transactions', filters] as const,
+    journal: (filters: Record<string, unknown> = {}) => ['admin', 'journal', filters] as const,
+    journalEntry: (id: string) => ['admin', 'journal', id] as const,
+    accounts: ['admin', 'ledger', 'accounts'] as const,
+    reconciliation: ['admin', 'ledger', 'reconciliation'] as const,
+    bets: (filters: Record<string, unknown> = {}) => ['admin', 'bets', filters] as const,
+    rounds: (filters: Record<string, unknown> = {}) => ['admin', 'rounds', filters] as const,
+    alerts: (filters: Record<string, unknown> = {}) => ['admin', 'alerts', filters] as const,
+    audit: (filters: Record<string, unknown> = {}) => ['admin', 'audit', filters] as const,
+    events: (filters: Record<string, unknown> = {}) => ['admin', 'events', filters] as const,
+    games: ['admin', 'games'] as const,
+  },
+};
