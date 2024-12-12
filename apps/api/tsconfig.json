@@ -1,0 +1,5 @@
+{
+  "extends": "@igaming/config/tsconfig.nest.json",
+  "compilerOptions": { "rootDir": ".", "outDir": "dist" },
+  "include": ["src", "test", "vitest.config.ts"]
+}
