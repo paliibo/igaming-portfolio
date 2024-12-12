@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="Inter, system-ui, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+  <rect width="980" height="560" fill="#f8fafc"/>
+  <text x="490" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#0f172a">iGaming portfolio platform — modular monolith</text>
+
+  <g>
+    <rect x="30" y="60" width="270" height="88" rx="10" fill="#0b1220"/><text x="165" y="90" text-anchor="middle" fill="#34d399" font-weight="600">LinePulse · Next.js :3000</text><text x="165" y="112" text-anchor="middle" fill="#cbd5e1">sportsbook, betslip, live odds</text><text x="165" y="132" text-anchor="middle" fill="#94a3b8">TanStack Query · Zustand · Socket.IO client</text>
+    <rect x="355" y="60" width="270" height="88" rx="10" fill="#121016"/><text x="490" y="90" text-anchor="middle" fill="#a78bfa" font-weight="600">SpinHarbor · Next.js :3001</text><text x="490" y="112" text-anchor="middle" fill="#cbd5e1">lobby, Dice &amp; Slots, history</text><text x="490" y="132" text-anchor="middle" fill="#94a3b8">provider-agnostic game screens</text>
+    <rect x="680" y="60" width="270" height="88" rx="10" fill="#1e293b"/><text x="815" y="90" text-anchor="middle" fill="#93c5fd" font-weight="600">LedgerArc · Next.js :3002</text><text x="815" y="112" text-anchor="middle" fill="#cbd5e1">back office, journal, risk, audit</text><text x="815" y="132" text-anchor="middle" fill="#94a3b8">operator / admin roles</text>
+  </g>
+
+  <g stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none">
+    <path d="M165 148 L400 228"/><path d="M490 148 L490 228"/><path d="M815 148 L580 228"/>
+  </g>
+  <text x="300" y="195" fill="#475569" font-size="12">REST (cookie session) + WebSocket</text>
+
+  <rect x="150" y="230" width="680" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="490" y="255" text-anchor="middle" font-weight="600" fill="#0f172a">NestJS API :4000 · one process, isolated modules</text>
+  <g font-size="12" fill="#1e293b">
+    <rect x="170" y="270" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="220" y="289" text-anchor="middle">Auth · RBAC</text>
+    <rect x="280" y="270" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="330" y="289" text-anchor="middle">Wallet</text>
+    <rect x="390" y="270" width="100" height="30" rx="6" fill="#dcfce7"/><text x="440" y="289" text-anchor="middle">Ledger (DE)</text>
+    <rect x="500" y="270" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="550" y="289" text-anchor="middle">Sportsbook</text>
+    <rect x="610" y="270" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="660" y="289" text-anchor="middle">Casino</text>
+    <rect x="720" y="270" width="90" height="30" rx="6" fill="#e2e8f0"/><text x="765" y="289" text-anchor="middle">Risk</text>
+    <rect x="170" y="310" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="220" y="329" text-anchor="middle">Admin</text>
+    <rect x="280" y="310" width="100" height="30" rx="6" fill="#e2e8f0"/><text x="330" y="329" text-anchor="middle">Audit</text>
+    <rect x="390" y="310" width="100" height="30" rx="6" fill="#fef3c7"/><text x="440" y="329" text-anchor="middle">Realtime gateway</text>
+    <rect x="500" y="310" width="100" height="30" rx="6" fill="#fef3c7"/><text x="550" y="329" text-anchor="middle">Odds simulator</text>
+    <rect x="610" y="310" width="100" height="30" rx="6" fill="#fef3c7"/><text x="660" y="329" text-anchor="middle">Settlement worker</text>
+    <rect x="720" y="310" width="90" height="30" rx="6" fill="#e2e8f0"/><text x="765" y="329" text-anchor="middle">Demo seed</text>
+  </g>
+  <text x="490" y="365" text-anchor="middle" font-size="12" fill="#475569">Every stake, payout, top-up and adjustment = one balanced JournalEntry inside a row-locked Postgres transaction</text>
+
+  <g stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)" fill="none">
+    <path d="M330 380 L250 440"/><path d="M650 380 L730 440"/>
+  </g>
+  <rect x="80" y="442" width="340" height="80" rx="10" fill="#1d4ed8"/><text x="250" y="470" text-anchor="middle" fill="#fff" font-weight="600">PostgreSQL 17 · Prisma 7</text><text x="250" y="492" text-anchor="middle" fill="#dbeafe">source of truth: wallets, journal, bets, rounds, audit</text><text x="250" y="510" text-anchor="middle" fill="#bfdbfe" font-size="12">SELECT … FOR UPDATE · unique idempotency keys</text>
+  <rect x="560" y="442" width="340" height="80" rx="10" fill="#b91c1c"/><text x="730" y="470" text-anchor="middle" fill="#fff" font-weight="600">Redis 7</text><text x="730" y="492" text-anchor="middle" fill="#fee2e2">BullMQ settlement queue · rate limits · dashboard cache</text><text x="730" y="510" text-anchor="middle" fill="#fecaca" font-size="12">never a financial source of truth</text>
+</svg>
